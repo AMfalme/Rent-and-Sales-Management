@@ -1,0 +1,12 @@
+.table {
+  border: 1px solid #eee;
+  border-radius: 15px;
+}
+.thead {
+  border: 1px solid #eee;
+  background-color: #c3c3c3;
+}
+.table-striped tr:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+}
