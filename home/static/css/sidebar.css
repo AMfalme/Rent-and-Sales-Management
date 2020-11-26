@@ -1,0 +1,43 @@
+.logo {
+  color: rgb(15, 7, 7);
+  font-family: "Lobster Two", cursive;
+  text-transform: capitalize;
+}
+#side-bar {
+  max-width: 0;
+  transition: 0.6s;
+  overflow: hidden;
+  position: absolute;
+  min-width: 0%;
+  z-index: 100000;
+  background: #e3e4e5;
+  padding: 0;
+}
+#side-bar.clicked {
+  min-width: 200px;
+  transition: 0.6s;
+}
+
+.drop-down a:hover,
+a.nav-link:hover {
+  background-color: #cacaca;
+}
+.drop-down a,
+a.nav-link {
+  color: rgb(23 16 16 / 83%);
+  min-width: 300px;
+}
+a.nav-link.active i.fa {
+  transform: rotate(-90deg);
+}
+
+a.nav-link i.fa {
+  transform: rotate(45deg);
+}
+.nav-open .shade-center {
+  transform: translate3d(225px, 0, 0);
+  transition: 0.6s;
+}
+.navbar {
+  width: 100%;
+}

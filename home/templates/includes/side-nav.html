@@ -1,0 +1,91 @@
+{% load static %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/sidebar.css' %}">
+{% endblock %}
+
+<div class="col-md-2 pt-2" id="side-bar">
+
+    <ul class="nav flex-column side-nav">
+
+
+        <li class="nav-item">
+            <a class="nav-link" href="#">Shelves <i class="fa fa-caret-down"></i></a>
+            <ul class="drop-down">
+                <a href="/shelves-page">
+                    <li>
+                        All Shelves
+                    </li>
+                </a>
+                <a href="/add_shelf">
+                    <li>
+                        Add shelf
+                    </li>
+                </a>
+
+            </ul>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/products">Products <i class="fa fa-caret-down"></i></a>
+            <ul class="drop-down">
+                <a href="/products">
+                    <li>
+                        All Products
+                    </li>
+                </a>
+                <a href="/sell_product/5">
+                    <li>
+                        Sell Products
+                    </li>
+                </a>
+                <a href="/1/add_product/">
+                    <li>
+                        Add product
+                    </li>
+                </a>
+
+            </ul>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Clients <i class="fa fa-caret-down"></i></a>
+            <ul class="drop-down">
+                <a href="/clients">
+                    <li>
+                        All Clients
+                    </li>
+                </a>
+                <a href="/add_new_client">
+                    <li>
+                        Add Client
+                    </li>
+                </a>
+
+            </ul>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="">Rent and Arrears <i class="fa fa-caret-down"></i></a>
+            <ul class="drop-down">
+                <li>
+                    <a href="/rent_payments">
+                        View Payments
+                    </a>
+                </li>
+                <li>
+                    <a href="/add_rent">
+                        Add Payment
+                    </a>
+                </li>
+
+            </ul>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/django-admin/home">admin</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/admin">wagtail admin</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link disabled" href="/logout">Logout</a>
+        </li>
+    </ul>
+</div>
