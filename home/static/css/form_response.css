@@ -1,0 +1,27 @@
+.notify h1 {
+  margin-bottom: 6px;
+}
+#sendInquiryResponse {
+  display: none;
+}
+.successbox h1 {
+  color: #678361;
+}
+.errorbox h1 {
+  color: #6f423b;
+}
+
+.successbox h1:before,
+.successbox h1:after {
+  background: #cad8a9;
+}
+.errorbox h1:before,
+.errorbox h1:after {
+  background: #d6b8b7;
+}
+
+.notify .alerticon {
+  /* display: block; */
+  text-align: center;
+  margin-bottom: 10px;
+}

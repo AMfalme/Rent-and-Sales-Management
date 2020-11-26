@@ -1,0 +1,41 @@
+body {
+  background-color: #a1a5a84a !important;
+}
+#side-bar {
+  background-color: none;
+  height: 100vh;
+  min-height: 600px;
+}
+.bg-fff {
+  background-color: #fff;
+}
+
+.shade-center {
+  background-color: #fff;
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
+  margin: 0 auto auto 10px;
+  min-height: 100vh;
+  transform: translate3d(50px, 0, 0);
+  transition: 0.6s;
+}
+.shade-center .m-4 {
+  width: 100%;
+  overflow-x: scroll;
+}
+.center-section {
+  background-color: #fff;
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
+}
+.navbar-button {
+  padding: 0.25rem 0.75rem;
+  font-size: 1.25rem;
+  line-height: 1;
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.25rem;
+}
+button:focus {
+  outline: none;
+}

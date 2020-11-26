@@ -1,0 +1,55 @@
+<div class="container-fluid">
+    <div class="row">
+        {% include "includes/center-sidenav.html" %}
+        <div class="col-md-10 center-section">
+
+            {% include 'includes/center-header.html' %}
+            <section class="feature-products">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 text-center logog">
+                            <h2 class="mt-4 mb-5 ">All Products</h2>
+                            <a class="feature-active" href="#">BEST SELLER</a> | <a href="#">NEW ARRIVAL</a> | <a
+                                href="#">MOST WANTED</a>
+                        </div>
+                        {%for product in products %}
+                        <div class="col-md-3 col-sm-6">
+                            <div class="product-grid">
+                                <div class="product-image">
+                                    <a href="#" class="image" style="background-color:#F3F3F3;">
+                                        <img src="{{ product.photo.url}}" alt="" width="100%">
+                                    </a>
+                                </div>
+                                <div class="product-content">
+                                    <h3 class="title"><a href="#">{{product.product_name}}</a></h3>
+
+                                    <div class="price">Price: {{product.product_unit_price}}</div>
+                                    <ul class="rating">
+                                        <li class="fas fa-star">shelf Number: {{product.product_shelf.id}}</li><br>
+                                        <li class="fas fa-star">No. of Items: {{product.no_of_products}}</li><br>
+                                        <li class="fas fa-star">shelf Size: {{product.product_shelf.shelf_size}}</li>
+                                        <br>
+                                        <li class="fas fa-star">shelf Owner:
+                                            {{product.product_shelf.client_owner.client_name}}</li><br>
+                                        <li class="fas fa-star"></li>
+                                        <li class="fas fa-star"></li>
+                                        <li class="fas fa-star"></li>
+                                        <li class="fas fa-star disable"></li>
+                                    </ul>
+                                </div>
+
+                                <div class="action-buttons">
+                                    <a class="btn-outline" href="/sell_product/{{product.id}}">Sell Item</a>
+                                    <!-- <a class="btn-outline-icon"><i class="far fa-heart"></i></a> -->
+                                    <!-- <a class="btn-outline-icon"><i class="fas fa-chart-pie"></i></a> -->
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+</div>

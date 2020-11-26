@@ -1,0 +1,38 @@
+{% load i18n wagtailcore_tags %}
+{% load static %}
+
+
+
+
+<div class="container mt-5">
+    <div class="row d-flex justify-content-center g-1">
+
+        {% for client in info %}
+        <div class="col-md-4">
+            <a href="/shelf/{{shelf.id}}">
+                <div class="product text-center my-list">
+                    <div class="client-status">
+                        {% if client.client_status %}
+                        <span class="badge badge-info">active</span><span
+                            class="text-muted ml-2">{{shelf.client_owner.client_name}}</span>
+                        {% else %}
+                        <span class="badge badge-secondary">inactive</span>
+
+                        {% endif %}
+                    </div>
+                    <img src="{{ client.photo.url}}" alt="" width="250" height="250" style="border-radius: 100%;
+                    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.7);">
+                    <div class="about px-3">
+                        <p class="text-center mt-3">Client Name. {{client.client_name}}</p>
+
+                        <h6>{{client.client_contacts}}</h6>
+                    </div> <span class="dot"><span class="inner-dot"><i class="fa fa-plus"></i></span></span>
+
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+
+    </div>
+</div>
+</div>

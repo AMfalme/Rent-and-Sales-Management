@@ -1,0 +1,56 @@
+body {
+  background-color: #fff;
+}
+
+.product {
+  padding: 30px;
+  background-color: #fff;
+  position: relative;
+  box-shadow: 0px 3px 9px 1px rgba(0, 0, 0, 0.7);
+  color: #143450;
+}
+.client-status {
+  position: absolute;
+  top: 5px;
+  left: 15px;
+}
+.about h4 {
+  margin-bottom: -3px;
+}
+
+.about h3 {
+  color: #143450;
+}
+
+.about span {
+  font-size: 13px;
+}
+
+.dot {
+  height: 40px;
+  width: 40px;
+  background-color: #e3ce57;
+  border-radius: 50%;
+  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  cursor: pointer;
+  right: 10%;
+  z-index: 10;
+  bottom: -5%;
+}
+
+.inner-dot {
+  height: 30px;
+  width: 30px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  cursor: pointer;
+}

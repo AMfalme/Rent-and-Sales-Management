@@ -1,0 +1,67 @@
+{% extends "includes/base_temp.html" %}
+
+{% load static %}
+
+{% block body_class %}template-homepage{% endblock %}
+
+{% block extra_css %}
+
+{% comment %}
+Delete the line below if you're just getting started and want to remove the welcome screen!
+{% endcomment %}
+<link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/shelves.css' %}">
+{% endblock extra_css %}
+
+{% block content %}
+
+{% comment %}
+Delete the line below if you're just getting started and want to remove the welcome screen!
+{% endcomment %}
+
+
+<!-- <div class="container mt-5">
+    <div class="row d-flex justify-content-center g-1"> -->
+
+<table class="table table-striped">
+    <thead class="thead">
+        <tr>
+            <th scope="col">Shelf No</th>
+            <th scope="col">Shelf Client</th>
+            <th scope="col">Shelf Price</th>
+            <th scope="col">Amount Paid</th>
+            <th scope="col">Date Paid</th>
+            <th scope="col">Client Status</th>
+            <th scope="col">Client Email</th>
+            <th scope="col"> Date joined</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for rent in info %}
+        <tr>
+            <a href="/shelf/{{shelf.id}}">
+                <td>{{rent.shelf_id}}</td>
+                <td scope="row">{{ rent.client_id.client_name}}</td>
+                <td>{{ rent.shelf_id.shelf_price}}</td>
+                <td>{{ rent.amount_paid}}</td>
+                <td>{{ rent.date }}</td>
+                <td>{% if shelf.client_owner %} <span class="badge badge-success">Occupied</span> {% else %}
+                    <span class="badge badge-secondary">Inactive
+                    </span>{% endif %}</td>
+                <td style="font-size: 12px;">{{ rent.client_name}} </td>
+                <td>{{ rent.client_id.date}}</td>
+                <td>
+                    <a href="/shelf/{{rent.id}}"><svg width="1em" height="1em" viewBox="0 0 16 16"
+                            class="bi bi-three-dots-vertical" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                        </svg> </a>
+                </td>
+            </a>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
