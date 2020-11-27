@@ -3,21 +3,26 @@
 <link rel="stylesheet" href="{% static 'css/sidebar.css' %}">
 {% endblock %}
 
-<div class="col-md-2 pt-2" id="side-bar">
+<div class="col-md-2 pt-2 clicked" id="side-bar">
 
     <ul class="nav flex-column side-nav">
 
-
         <li class="nav-item">
-            <a class="nav-link" href="#">Shelves <i class="fa fa-caret-down"></i></a>
+            <a href="/" class="nav-link nav-target">
+                <i class="fas fa-chalkboard"></i> Dashboard
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link nav-target" href="#"><i class="fas fa-chess-board"></i>Shelves <i
+                    class="fa fa-caret-down"></i></a>
             <ul class="drop-down">
                 <a href="/shelves-page">
-                    <li>
+                    <li><i class="fas fa-archive"></i>
                         All Shelves
                     </li>
                 </a>
                 <a href="/add_shelf">
-                    <li>
+                    <li><i class="fas fa-pallet"></i>
                         Add shelf
                     </li>
                 </a>
@@ -26,10 +31,10 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/products">Products <i class="fa fa-caret-down"></i></a>
+            <a class="nav-link nav-target" href="#">Products <i class="fa fa-caret-down"></i></a>
             <ul class="drop-down">
                 <a href="/products">
-                    <li>
+                    <li><i class="fab fa-product-hunt"></i>
                         All Products
                     </li>
                 </a>
@@ -39,7 +44,7 @@
                     </li>
                 </a>
                 <a href="/1/add_product/">
-                    <li>
+                    <li><i class="fas fa-sitemap"></i>
                         Add product
                     </li>
                 </a>
@@ -47,15 +52,15 @@
             </ul>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Clients <i class="fa fa-caret-down"></i></a>
+            <a class="nav-link nav-target" href="#">Clients <i class="fa fa-caret-down"></i></a>
             <ul class="drop-down">
                 <a href="/clients">
-                    <li>
+                    <li><i class="fas fa-user-friends"></i>
                         All Clients
                     </li>
                 </a>
                 <a href="/add_new_client">
-                    <li>
+                    <li><i class="fas fa-users"></i>
                         Add Client
                     </li>
                 </a>
@@ -63,29 +68,28 @@
             </ul>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="">Rent and Arrears <i class="fa fa-caret-down"></i></a>
+            <a class="nav-link nav-target" href="">Rent and Arrears <i class="fa fa-caret-down"></i></a>
             <ul class="drop-down">
-                <li>
-                    <a href="/rent_payments">
-                        View Payments
-                    </a>
-                </li>
-                <li>
-                    <a href="/add_rent">
+                <a href="/rent_payments">
+                    <li><i class="fas fa-th-list"></i>View Payments
+                    </li>
+                </a>
+                <a href="/add_rent">
+                    <li><i class="fas fa-dollar-sign"></i>
                         Add Payment
-                    </a>
-                </li>
+                    </li>
+                </a>
 
             </ul>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/django-admin/home">admin</a>
+            <a class="nav-link nav-target" href="/django-admin/home">admin</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/admin">wagtail admin</a>
+            <a style="cursor: not-allowed;" class="nav-link nav-target" href="/admin">Pages admin</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link disabled" href="/logout">Logout</a>
+            <a class="nav-link nav-target disabled" href="/logout">Logout</a>
         </li>
     </ul>
 </div>

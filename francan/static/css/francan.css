@@ -6,3 +6,7 @@
   color: #564b44;
   padding-top: 60px;
 }
+.border-b-slim {
+  border-bottom: 1px solid rgb(158 149 149 / 50%);
+  padding: 15px 0 0;
+}

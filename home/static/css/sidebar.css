@@ -32,7 +32,7 @@ a.nav-link.active i.fa {
 }
 
 a.nav-link i.fa {
-  transform: rotate(45deg);
+  transform: rotate(-90deg);
 }
 .nav-open .shade-center {
   transform: translate3d(225px, 0, 0);
@@ -40,4 +40,14 @@ a.nav-link i.fa {
 }
 .navbar {
   width: 100%;
+}
+.drop-down a {
+  display: block;
+  padding: 5px;
+  text-decoration: none;
+  list-style: none;
+}
+
+a:hover {
+  text-decoration: none;
 }

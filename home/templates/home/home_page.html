@@ -1,21 +1,123 @@
-{% extends "includes/base_temp.html" %}
 {% load static %}
 
-{% block body_class %}template-homepage{% endblock %}
+{% load static wagtailuserbar %}
 
-{% block extra_css %}
+<!DOCTYPE html>
+<html class="no-js" lang="en">
 
-{% comment %}
-Delete the line below if you're just getting started and want to remove the welcome screen!
-{% endcomment %}
-<link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
-{% endblock extra_css %}
+<head>
+    <meta charset="utf-8" />
+    <title>
+        {% block title %}
+        {% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}
+        {% endblock %}
+        {% block title_suffix %}
+        {% with self.get_site.site_name as site_name %}
+        {% if site_name %}- {{ site_name }}{% endif %}
+        {% endwith %}
+        {% endblock %}
+    </title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-{% block content %}
+    {# Global stylesheets #}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/francan.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
 
-{% comment %}
-Delete the line below if you're just getting started and want to remove the welcome screen!
-{% endcomment %}
-{% include 'home/shelves.html' %}
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/global.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+        integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    {% block extra_css %}
+    {# Override this in templates to add extra stylesheets #}
+    {% endblock %}
+</head>
 
-{% endblock content %}
+<body class="{% block body_class %}{% endblock %}">
+    {% wagtailuserbar %}
+
+    {% include 'includes/top-nav.html' %}
+    <div class="container-fluid">
+        <div class="row pt-5 resize-sm nav-open">
+            <div class="col-md-12">
+                <div class="row">
+                    {% include "includes/side-nav.html" %}
+                    <div class="col-md-10 row dashboard-top">
+                        <h4 class="pl-5 pt-4 p-3" style="color: #fff;">
+                            Welcome to the Francan Logistics Dashboard
+                        </h4>
+                        <div class="row">
+                            <a href="/clients">
+                                <div class="dashboard-data mr-1">
+                                    <i class="fas fa-users" style="color: rgb(71 25 144 / 75%);"></i>
+                                    <div class="dashboard-info ml-4">
+                                        <p>
+                                            Total no. of users
+                                        </p>
+                                        <h5>
+                                            55
+                                        </h5>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="/shelves-page">
+                                <div class="dashboard-data mr-1">
+                                    <i class="fas fa-users" style="color: rgb(73 89 189);"></i>
+                                    <div class="dashboard-info ml-4">
+                                        <p>
+                                            Total no. of Shelves
+                                        </p>
+                                        <h5>
+                                            55
+                                        </h5>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="/rent_payments">
+                                <div class="dashboard-data mr-1">
+                                    <i class="fas fa-users"></i>
+                                    <div class="dashboard-info ml-4">
+                                        <p>
+                                            Total no. of Orders
+                                        </p>
+                                        <h5>
+                                            55
+                                        </h5>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-10 row shade-center">
+                        <div class="m-4 row">
+                            {% block content %}
+
+                            {% include 'home/shelves.html' %}
+
+                            {% endblock %}
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+    {# Global javascript #}
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="{% static 'js/francan.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/form.js' %}"></script>
+    <script src="https://kit.fontawesome.com/5f4ea9258b.js" crossorigin="anonymous"></script>
+
+    {% block extra_js %}
+    {# Override this in templates to add extra javascript #}
+    {% endblock %}
+</body>
+
+</html>
