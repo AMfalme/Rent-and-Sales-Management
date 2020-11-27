@@ -38,6 +38,52 @@ a.nav-link i.fa {
   transform: translate3d(225px, 0, 0);
   transition: 0.6s;
 }
+@media (max-width: 600px) {
+  .dashboard-top {
+    transform: translate3d(0, 0, 0);
+  }
+  .dashboard-data {
+    margin: 10px auto;
+    min-width: 280px;
+  }
+  .nav-open .shade-center {
+    transform: translate3d(0, 0, 0);
+    transition: 0.6s;
+    margin: 0 auto;
+    display: block;
+    background-color: transparent;
+  }
+  #side-bar.clicked {
+    min-width: 0px;
+    transition: 0.3s;
+  }
+  #side-bar {
+    min-width: 200px;
+    border-right: 1px solid #4e4c4c;
+    transition: 0.3s;
+  }
+  .shade-center::before {
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    background-color: rgb(0 0 0 / 68%);
+    transition: 0.3s;
+  }
+  .nav-open .shade-center::before {
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    background-color: transparent;
+    transition: 0.3s;
+  }
+}
+
 .navbar {
   width: 100%;
 }
